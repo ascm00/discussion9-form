@@ -1,5 +1,16 @@
   /* Create an accessible color palette using var()function */
   /* https://www.w3schools.com/css/css3_variables.asp */
+
+  :root {
+    --primary-color: #CFC096;
+    --secondary-color: #015204;
+    --text-color: #702082;
+  }
+
+
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
   
   form {
     display: grid;
@@ -10,15 +21,15 @@
     margin: 20px auto;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #702082;
-    background: #CFC096;
+    color: var(--text-color);
+    background: var(--primary-color);
   }
 
   .radio {
     grid-column-start: 1;
     grid-column-end: 3;
     /* background: #575294; */
-    color: #702082;
+    color: var(--text-color);
   }
 
   #name {
@@ -26,8 +37,8 @@
     padding: 10px;
     font-size: 18px;
     font-weight: bold;
-    background: #CFC096;
-    color: #9B9A6D;
+    background: var(--primary-color);
+    color: var(--primary-color);
   }
 
   #message {
@@ -46,7 +57,7 @@
   input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: var(--secondary-color);
     color: white;
     border: none;
     border-radius: 5px;
@@ -54,5 +65,17 @@
   }
 
   input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: var(--secondary-color);
+  }
+
+
+  .skip {
+    left: -999px;
+    position: absolute;
+  }
+
+  .skip:focus {
+    font: size 20px;
+    position: fixed;
+    left: 50%;
   }
